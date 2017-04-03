@@ -32,6 +32,22 @@ export class RollbarService {
     public configure(options: RollbarConfig) {
         return this.rollbar.configure(options);
     }
+
+    /**
+     * Logs a message to Rollbar at the default log level
+     * 
+     * @param {String} message The content of the message
+     * @param {Error} [error] An exception to pass along with the message
+     * @param {Object} [data] Custom data object to log with the message
+     * @param {Function} [callback] If you aren't into promises, provide a callback.
+     * @returns 
+     * 
+     * @memberOf RollbarService
+     */
+    public log(message: String, error?: Error, data?: Object, callback?: Function): Promise<any> {
+        return this.rollbar.log(message, error, data, callback);
+    }
+
     /**
      * Logs an info level log message to Rollbar
      * 
