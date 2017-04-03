@@ -6,6 +6,7 @@
   "typings": "lib/main",
   "scripts": {
     "clean": "rm -rf lib",
+    "doc": "./node_modules/.bin/typedoc --out doc --mode modules --excludeNotExported --excludeExternals src",
     "test": "ng test --single-run --code-coverage",
     "posttest": "npm run coveralls",
     "tsc": "node_modules/.bin/tsc",
@@ -52,6 +53,7 @@
     "ts-node": "^2.1.0",
     "tslint": "^4.4.2",
     "tslint-eslint-rules": "^3.3.0",
+    "typedoc": "^0.5.9",
     "typescript": "^2.1.5",
     "webpack": "^2.1.0-beta.25",
     "zone.js": "^0.8.4"
