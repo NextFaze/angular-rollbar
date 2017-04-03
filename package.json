@@ -59,10 +59,8 @@
     "zone.js": "^0.8.4"
   },
   "peerDependencies": {
-    "@angular/common": "^4.0.1",
-    "@angular/core": "4.0.1",
-    "rxjs": "^5.0.1",
-    "zone.js": "^0.8.4"
+    "@angular/common": ">=2.0.0",
+    "@angular/core": ">=2.0.0"
   },
   "dependencies": {
     "rollbar-browser": "^1.9.4"
