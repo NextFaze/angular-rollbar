@@ -49,3 +49,7 @@ npm install
 npm test
 ```
 
+## Disclaimer
+
+This project is not affiliated in anyway with Rollbar Inc. We do like their
+service though.
