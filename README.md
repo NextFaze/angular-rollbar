@@ -6,6 +6,10 @@ This package provides an Angular 2+ service for logging to Rollbar.
 
     npm install angular-rollbar
 
+### Dependencies
+
+This module relies on the official `rollbar-browser` npm package. In addition, it has Angular >= 2 as a peer dependency.
+
 ## Usage
 
 ### Bootstrap the module
