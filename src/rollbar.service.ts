@@ -11,19 +11,19 @@ export class RollbarService {
         this.rollbar = Rollbar.init(options);
     }
 
-    public info(message: String, error?: Error, data?: Object, callback?: Function) {
+    public info(message: String, error?: Error, data?: Object, callback?: Function): Promise<any> {
         return this.rollbar.info(message, error, data, callback);
     }
 
-    public warn(message: String, error: Error, data: Object, callback: Function) {
+    public warn(message: String, error?: Error, data?: Object, callback?: Function): Promise<any> {
         return this.rollbar.warn(message, error, data, callback);
     }
 
-    public error(message: String, error?: Error, data?: Object, callback?: Function) {
+    public error(message: String, error?: Error, data?: Object, callback?: Function): Promise<any> {
         return this.rollbar.error(message, error, data, callback);
     }
 
-    public critical(message: String, error: Error, data: Object, callback: Function) {
+    public critical(message: String, error?: Error, data?: Object, callback?: Function): Promise<any> {
         return this.rollbar.critical(message, error, data, callback);
     }
 }
