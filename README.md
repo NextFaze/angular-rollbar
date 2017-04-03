@@ -27,7 +27,7 @@ export class MyAngularApp {}
 
 Let the Angular DI do all the magic for you.
 
-```
+```ts
 import { Component } from '@angular/core'
 import { RollbarService } from 'angular-rollbar';
 
