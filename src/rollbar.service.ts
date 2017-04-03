@@ -25,6 +25,14 @@ export class RollbarService {
     }
 
     /**
+     * Sets Rollbar configuration options at runtime.
+     * 
+     * @param options A partial configuration object
+     */
+    public configure(options: RollbarConfig) {
+        return this.rollbar.configure(options);
+    }
+    /**
      * Logs an info level log message to Rollbar
      * 
      * @param {String} message The content of the message
