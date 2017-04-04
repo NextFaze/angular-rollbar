@@ -1,5 +1,7 @@
 # Angular (2+) Rollbar Integration
 
+[![Build Status](https://travis-ci.org/NextFaze/angular-rollbar.svg?branch=master)](https://travis-ci.org/NextFaze/angular-rollbar) [![Coverage Status](https://coveralls.io/repos/github/NextFaze/angular-rollbar/badge.svg?branch=master)](https://coveralls.io/github/NextFaze/angular-rollbar?branch=master)
+
 This package provides an Angular 2+ service for logging to Rollbar.
 
 ## Installation
