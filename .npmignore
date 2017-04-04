@@ -1,5 +1,12 @@
 node_modules
+angular-cli.json
+coverage
 src
 tsconfig.json
 manup-demo
-
+*.un~
+karma.conf.js
+.travis.yml
+.nvmrc
+*.tar.gz
+*.tgz

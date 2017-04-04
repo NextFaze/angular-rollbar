@@ -6,4 +6,5 @@ lib
 *.un~
 coverage
 doc
-
+*.tgz
+package
