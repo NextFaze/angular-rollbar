@@ -2,8 +2,8 @@
   "name": "angular-rollbar",
   "version": "0.0.1",
   "description": "Angular 2+ Service for Rollbar error logging",
-  "main": "lib/main.js",
-  "typings": "lib/main",
+  "main": "lib/index.js",
+  "typings": "lib/index",
   "scripts": {
     "clean": "rm -rf lib",
     "doc": "./node_modules/.bin/typedoc --out doc --mode modules --excludeNotExported --excludeExternals src",
