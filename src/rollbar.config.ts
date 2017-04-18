@@ -129,4 +129,12 @@ export interface RollbarPayload {
             code_version: string;
         }
     }
+    
+    /**
+     * rollbar log environment (e.g. production, staging, etc.)
+     * 
+     * @type {string}
+     * @memberOf RollbarPayload
+     */
+    environment?: string;
 }
