@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {ErrorHandler, Injectable} from '@angular/core';
 import * as Rollbar from 'rollbar';
 
 import {RollbarConfig} from './rollbar.config';
@@ -11,7 +11,7 @@ import {RollbarConfig} from './rollbar.config';
  * things a little smoother.
  * Follows the Rollbar browser API as closely as possible.
  */
-export class RollbarService {
+export class RollbarService implements ErrorHandler {
   private rollbar: any;
 
   /**
@@ -33,6 +33,10 @@ export class RollbarService {
    */
   public configure(options: RollbarConfig) {
     return this.rollbar.configure(options);
+  }
+
+  public handleError(err: any): void {
+    this.rollbar.error(err.originalError || err);
   }
 
   /**
