@@ -63,6 +63,6 @@
     "@angular/core": ">=2.0.0"
   },
   "dependencies": {
-    "rollbar-browser": "^1.9.4"
+    "rollbar": "^2.0.0"
   }
 }
