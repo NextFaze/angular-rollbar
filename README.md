@@ -17,12 +17,16 @@ This module relies on the official `rollbar-browser` npm package. In addition, i
 ### Bootstrap the module
 
 ```ts
+import { RollbarModule, RollbarService } from 'angular-rollbar'
 
 NgModule({
     imports: [
         RollbarModule.forRoot({
             accessToken: 'YOUR ROLLBAR CLIENT TOKEN'
         })
+    ],
+    providers: [
+        { provide: ErrorHandler, useClass: RollbarService }
     ]
 })
 export class MyAngularApp {}
