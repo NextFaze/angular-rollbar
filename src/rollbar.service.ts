@@ -1,39 +1,41 @@
-import { Injectable } from '@angular/core';
-import { RollbarConfig } from './rollbar.config';
-import *  as Rollbar from 'rollbar-browser';
+import {Injectable} from '@angular/core';
+import * as Rollbar from 'rollbar';
+
+import {RollbarConfig} from './rollbar.config';
 
 @Injectable()
 /**
  * Rollbar Logging Service.
- * 
- * Wraps the logging functions of Rollbar in an Angular 2+ service to make things a little smoother.
+ *
+ * Wraps the logging functions of Rollbar in an Angular 2+ service to make
+ * things a little smoother.
  * Follows the Rollbar browser API as closely as possible.
  */
 export class RollbarService {
+  private rollbar: any;
 
-    private rollbar: any;
+  /**
+   * Creates an instance of RollbarService.
+   *
+   * @param {RollbarConfig} options The configuration options for your Rollbar
+   * account.
+   *
+   * @memberOf RollbarService
+   */
+  constructor(options: RollbarConfig) {
+    this.rollbar = Rollbar.init(options);
+  }
 
-    /**
-     * Creates an instance of RollbarService.
-     * 
-     * @param {RollbarConfig} options The configuration options for your Rollbar account.
-     * 
-     * @memberOf RollbarService
-     */
-    constructor(options: RollbarConfig) {
-        this.rollbar = Rollbar.init(options);
-    }
+  /**
+   * Sets Rollbar configuration options at runtime.
+   *
+   * @param options A partial configuration object
+   */
+  public configure(options: RollbarConfig) {
+    return this.rollbar.configure(options);
+  }
 
-    /**
-     * Sets Rollbar configuration options at runtime.
-     * 
-     * @param options A partial configuration object
-     */
-    public configure(options: RollbarConfig) {
-        return this.rollbar.configure(options);
-    }
-
-    /**
+  /**
      * Logs a message to Rollbar at the default log level
      * 
      * @param {String} message The content of the message
@@ -44,11 +46,11 @@ export class RollbarService {
      * 
      * @memberOf RollbarService
      */
-    public log(message: String, error?: Error, data?: Object, callback?: Function): Promise<any> {
-        return this.rollbar.log(message, error, data, callback);
-    }
+  public log(message: String, error?: Error, data?: Object, callback?: Function): Promise<any> {
+    return this.rollbar.log(message, error, data, callback);
+  }
 
-    /**
+  /**
      * Logs an info level log message to Rollbar
      * 
      * @param {String} message The content of the message
@@ -59,11 +61,11 @@ export class RollbarService {
      * 
      * @memberOf RollbarService
      */
-    public info(message: String, error?: Error, data?: Object, callback?: Function): Promise<any> {
-        return this.rollbar.info(message, error, data, callback);
-    }
+  public info(message: String, error?: Error, data?: Object, callback?: Function): Promise<any> {
+    return this.rollbar.info(message, error, data, callback);
+  }
 
-    /**
+  /**
      * Logs a WARN level log message to Rollbar
      * 
      * @param {String} message The content of the message
@@ -74,11 +76,11 @@ export class RollbarService {
      * 
      * @memberOf RollbarService
      */
-    public warn(message: String, error?: Error, data?: Object, callback?: Function): Promise<any> {
-        return this.rollbar.warn(message, error, data, callback);
-    }
+  public warn(message: String, error?: Error, data?: Object, callback?: Function): Promise<any> {
+    return this.rollbar.warn(message, error, data, callback);
+  }
 
-    /**
+  /**
      * Logs an ERROR level log message to Rollbar
      * 
      * @param {String} message The content of the message
@@ -89,11 +91,11 @@ export class RollbarService {
      * 
      * @memberOf RollbarService
      */
-    public error(message: String, error?: Error, data?: Object, callback?: Function): Promise<any> {
-        return this.rollbar.error(message, error, data, callback);
-    }
+  public error(message: String, error?: Error, data?: Object, callback?: Function): Promise<any> {
+    return this.rollbar.error(message, error, data, callback);
+  }
 
-    /**
+  /**
      * Logs a CRITICAL ERROR log message to Rollbar
      * 
      * @param {String} message The content of the message
@@ -104,7 +106,8 @@ export class RollbarService {
      * 
      * @memberOf RollbarService
      */
-    public critical(message: String, error?: Error, data?: Object, callback?: Function): Promise<any> {
-        return this.rollbar.critical(message, error, data, callback);
-    }
+  public critical(message: String, error?: Error, data?: Object, callback?: Function):
+      Promise<any> {
+    return this.rollbar.critical(message, error, data, callback);
+  }
 }
