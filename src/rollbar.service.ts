@@ -23,7 +23,7 @@ export class RollbarService implements ErrorHandler {
    * @memberOf RollbarService
    */
   constructor(options: RollbarConfig) {
-    this.rollbar = Rollbar.init(options);
+    this.rollbar = new Rollbar(options);
   }
 
   /**
