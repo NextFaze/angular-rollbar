@@ -65,7 +65,7 @@ export class RollbarConfig {
      * @type {boolean}
      * @memberOf RollbarConfig
      */
-    captureUnandledRejections? : boolean
+    captureUnhandledRejections? : boolean
 
     /**
      * Verbose mode logs to the console as well as to Rollbar.
