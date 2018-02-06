@@ -1,6 +1,6 @@
-import { RollbarConfig } from './rollbar.config';
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { RollbarService } from './rollbar.service';
+import { RollbarService, ROLLBAR_CONFIGURATION } from './rollbar.service';
+import { Configuration} from 'rollbar';
 
 @NgModule({
     providers: [
@@ -22,12 +22,12 @@ export class RollbarModule {
      * 
      * @memberOf RollbarModule
      */
-    static forRoot(config: RollbarConfig): ModuleWithProviders {
+    static forRoot(config: Configuration): ModuleWithProviders {
 
         return {
             ngModule: RollbarModule,
             providers: [
-                {provide: RollbarConfig, useValue: config}
+                {provide: ROLLBAR_CONFIGURATION, useValue: config}
             ],
         }
     }

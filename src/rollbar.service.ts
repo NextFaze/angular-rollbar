@@ -1,7 +1,9 @@
-import {ErrorHandler, Injectable} from '@angular/core';
+import {ErrorHandler, Injectable, Inject} from '@angular/core';
 import * as Rollbar from 'rollbar';
+import { Configuration} from 'rollbar';
+import { InjectionToken } from '@angular/core';
 
-import {RollbarConfig} from './rollbar.config';
+export const ROLLBAR_CONFIGURATION = new InjectionToken<Configuration>('Angular Rollbar Configuration Object');
 
 @Injectable()
 /**
@@ -22,7 +24,7 @@ export class RollbarService implements ErrorHandler {
    *
    * @memberOf RollbarService
    */
-  constructor(options: RollbarConfig) {
+  constructor(@Inject(ROLLBAR_CONFIGURATION) options: Configuration) {
     this.rollbar = new Rollbar(options);
   }
 
@@ -31,7 +33,7 @@ export class RollbarService implements ErrorHandler {
    *
    * @param options A partial configuration object
    */
-  public configure(options: RollbarConfig) {
+  public configure(options: Configuration) {
     return this.rollbar.configure(options);
   }
 
