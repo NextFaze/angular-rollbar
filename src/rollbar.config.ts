@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core'
+import { Level } from 'rollbar';
 
 @Injectable()
 
@@ -49,7 +50,7 @@ export class RollbarConfig {
      * @type {string}
      * @memberOf RollbarConfig
      */
-    reportLevel?: string;
+    reportLevel?: Level;
 
     /**
      * Whether to capture and report uncaught exceptions.
